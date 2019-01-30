@@ -17,4 +17,8 @@ export class MovieDetailsComponent implements OnInit {
     this.url_img = 'https://image.tmdb.org/t/p/w154/' + this.movie.poster_path;
   }
 
+  addToWatchlist(movie: Movie) {
+    // ...
+  }
+
 }
