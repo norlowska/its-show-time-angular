@@ -3,3 +3,10 @@
     height: 35px;
     margin-bottom: 25px;
 }
+
+.movie-details {
+    background: rgba(34, 34, 34, 0.5);
+    margin-top: 5px;
+    border: 2px solid #000;
+    border-radius: 8px;
+}

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { SortingOrder } from 'src/app/sorting-order';
 import { Movie } from 'src/app/movie';
 
@@ -7,7 +7,7 @@ import { Movie } from 'src/app/movie';
   templateUrl: './movies-list.component.html',
   styleUrls: ['./movies-list.component.css']
 })
-export class MoviesListComponent implements OnInit {
+export class MoviesListComponent implements OnChanges {
   @Input() movies: Movie[];
   sortingOrder: SortingOrder;
   sortedMovies: Movie[];
@@ -18,7 +18,7 @@ export class MoviesListComponent implements OnInit {
     this.sort();
   }
 
-  ngOnInit() {
+  ngOnChanges() {
     this.sortedMovies = this.movies;
     console.log(this.movies);
     this.sort();

@@ -1,4 +1,5 @@
 export class Movie {
+    id: number;
     original_title: string;
     release_date: string;
     overview: string;

@@ -1,3 +1,16 @@
-<p>
-  movie-details works!
-</p>
+<div class="row">
+  <div class="col-md-3 poster-col">
+    <a href={{url_movie}}>
+      <span *ngIf="movie.poster_path"><img src={{url_img}} alt="poster" /></span>
+      <span *ngIf="!movie.poster_path"><img src="https://via.placeholder.com/92x138.jpg" alt="no-poster" /></span>
+    </a>
+  </div>
+  <div class="col-md-6 info-col">
+    <h2 class="title">{{movie.original_title}} ({{movie.release_date | date: 'yyyy'}})</h2>
+    <h3>Overview: </h3>
+    <p class="overview">{{movie.overview}}</p>
+  </div>
+  <div class="col-md-3 buttons-col">
+
+  </div>
+</div>

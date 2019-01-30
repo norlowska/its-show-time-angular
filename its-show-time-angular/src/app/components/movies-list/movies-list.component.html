@@ -11,6 +11,7 @@
     
   </div>
 </div>
-<div class="row">
 
-</div>
+  <div class="movie-details" *ngFor="let movie of movies">
+      <app-movie-details [movie]="movie"></app-movie-details>
+  </div>
