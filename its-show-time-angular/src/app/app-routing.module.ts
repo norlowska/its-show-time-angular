@@ -5,9 +5,10 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 import { UserMoviesComponent } from './components/user-movies/user-movies.component';
 
 const routes: Routes = [
-  { path: '/', components: NowPlayingComponent },
-  { path: '/search=:query', components: SearchResultsComponent},
-  { path: '/user-movies', components: UserMoviesComponent}
+  { path: '', redirectTo: '/now-playing', pathMatch: 'full' },
+  { path: 'search=:query', component: SearchResultsComponent},
+  { path: 'user-movies', component: UserMoviesComponent},
+  { path: 'now-playing', component: NowPlayingComponent }
 ];
 
 @NgModule({

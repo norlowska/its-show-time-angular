@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+
+body {
+    background-color: #1b2b34!important;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+a, a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color:#f44336;
+}
+
+input {
+    color: #222;
+}
+
+h1, h2, h3 {
+    margin-top: 10px;
+    font-family: 'Josefin Sans', serif;
+}
+
+button {
+    background: #f44336 !important;
+    border: 1px solid #f44336 !important;
+    border-radius: 4px;
+    color: white !important;
+    text-shadow: none;
+    text-align: center;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+button:hover, button:focus, button:active {
+    background:  #c11003 !important;
+    border: 1px solid #c11003 !important;
+    border-radius: 4px;
+    color:#111 !important;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+}
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}

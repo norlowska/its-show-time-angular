@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MoviesService } from 'src/app/movies.service';
+import { Movie } from 'src/app/movie';
 
 @Component({
   selector: 'app-now-playing',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./now-playing.component.css']
 })
 export class NowPlayingComponent implements OnInit {
-
-  constructor() { }
+  nowPlaying: Movie[];
+  constructor(private moviesService: MoviesService) { }
 
   ngOnInit() {
+    this.getNowPlaying();
   }
 
+  getNowPlaying() {
+    this.moviesService.getNowPlaying().subscribe(res => {
+      this.nowPlaying = res.results;
+      console.log(this.nowPlaying);
+    });
+  }
 }
