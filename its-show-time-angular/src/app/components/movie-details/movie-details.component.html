@@ -23,8 +23,6 @@
     </ng-container>
   </div>
   <div class="col-md-3 buttons-col">
-    <!-- dodać czy jest na liście -> wtedy wyłączyć guzik -->
     <button *ngIf="!isOnList(movie.id)" class="button button-order" (click)="addToWatchlist(movie)">Add to watchlist</button>
-    <!-- <button class="button button-order">Show details</button> -->
   </div>
 </div>
