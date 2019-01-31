@@ -9,10 +9,22 @@
     <h2 class="title">{{movie.original_title}} ({{movie.release_date | date: 'yyyy'}})</h2>
     <h3>Overview: </h3>
     <p class="overview">{{movie.overview}}</p>
+    <ng-container *ngIf="!isFetching">
+      <h2>Cast</h2>
+      <ul class="cast-list">
+        <li *ngFor="let actor of movie.cast | slice:0:10">
+          <a href="https://www.themoviedb.org/person/{{actor.id}}">
+            <img *ngIf="!actor.profile_path" src="https://via.placeholder.com/92x138.jpg" />
+            <img *ngIf="actor.profile_path" src="https://image.tmdb.org/t/p/w92{{actor.profile_path}}" />
+            <p>{{actor.name}}</p>
+          </a>
+        </li>
+      </ul>
+    </ng-container>
   </div>
   <div class="col-md-3 buttons-col">
     <!-- dodać czy jest na liście -> wtedy wyłączyć guzik -->
-    <button class="button button-order" (click)="addToWatchlist(movie)">Add to watchlist</button>
+    <button *ngIf="!isOnList(movie.id)" class="button button-order" (click)="addToWatchlist(movie)">Add to watchlist</button>
     <!-- <button class="button button-order">Show details</button> -->
   </div>
 </div>

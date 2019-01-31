@@ -4,4 +4,6 @@ export class Movie {
     release_date: string;
     overview: string;
     poster_path: string;
+    cast: Array<any>;
+    crew: Array<any>;
 }

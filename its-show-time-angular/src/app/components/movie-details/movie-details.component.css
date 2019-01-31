@@ -12,3 +12,13 @@
     height: 35px;
     margin-top: 25px;
 }
+.cast-list {
+    list-style-type: none;
+}
+
+.cast-list li, .directors-list li {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}

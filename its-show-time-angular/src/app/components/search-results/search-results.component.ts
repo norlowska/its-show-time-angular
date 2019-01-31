@@ -27,7 +27,6 @@ export class SearchResultsComponent implements OnInit {
     this.moviesService.getSearchResults(title).subscribe( response => {
       const searchResults = response;
       this.movies = searchResults.results;
-      console.log(this.movies);
     });
   }
 

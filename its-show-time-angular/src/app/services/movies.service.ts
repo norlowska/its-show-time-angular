@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Movie } from '../movie';
+import { MovieCredits } from '../movie-credits';
 import { SearchResults } from '../search-results';
 
 @Injectable({
@@ -23,8 +24,8 @@ export class MoviesService {
     return this.http.get<Movie[]>(`${this.url}/movie/now_playing${this.key}`);
   }
 
-  getCredits(id: string): Observable<Movie[]> {
-    return this.http.get<Movie[]>(`${this.url}/movie/${id}/credits${this.key}`);
+  getCredits(id: number) {
+    return this.http.get<MovieCredits>(`${this.url}/movie/${id}/credits${this.key}`);
   }
 
 }

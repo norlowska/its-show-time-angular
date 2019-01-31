@@ -19,8 +19,6 @@ export class UserMoviesShortComponent implements OnInit {
     this.url_img = 'https://image.tmdb.org/t/p/w154/';
     this.movieslist = this.watchlistService.getWatchlist();
     // this.watchlistService.getWatchlist().subscribe(res => {this.movieslist = res});
-    console.log("movieslist short")
-    console.log(this.movieslist);
   }
 
   removeFromWatchlist(movie: Movie) {
