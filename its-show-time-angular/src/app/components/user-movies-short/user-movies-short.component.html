@@ -4,6 +4,9 @@
   <div *ngIf="(movieslist$ | async)?.length > 0"> -->
   <div *ngIf="movieslist.length == 0">Your watchlist is empty</div>
   <div *ngIf="movieslist.length > 0">
+    <div class="options">
+        <a href="/user-movies"><button>Show all</button></a>
+    </div>
     <div class="your-movie" *ngFor="let movie of movieslist | slice : 0 : 5">
       <a href={{url_movie}}{{movie.id}}>
         <span *ngIf="movie.poster_path"><img src={{url_img}}{{movie.poster_path}} alt="poster" /></span>

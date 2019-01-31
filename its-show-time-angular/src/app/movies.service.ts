@@ -21,4 +21,9 @@ export class MoviesService {
   getNowPlaying(): Observable<Movie[]> {
     return this.http.get<Movie[]>(`${this.url}/movie/now_playing${this.key}`);
   }
+
+  getCredits(id: string): Observable<Movie[]> {
+    return this.http.get<Movie[]>(`${this.url}/movie/${id}/credits${this.key}`);
+  }
+
 }

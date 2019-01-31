@@ -40,4 +40,14 @@ export class WatchListService {
         localStorage.setItem('watchlist', JSON.stringify({ watchlist: watchlist }))
     }
 
+    // saveReview(movie: Movie, review: string) {
+    //     let movies = this.getWatchlist();
+    //     let index = movies.map(function(item) {return item.id;}).indexOf(movie.id);
+    //     // movies[index].review = review;
+
+    //     //nie da się dodawać tak pól jak w js :( 
+
+    //     this.setLocalStorageWatchlist(movies);
+    // }
+
 }
