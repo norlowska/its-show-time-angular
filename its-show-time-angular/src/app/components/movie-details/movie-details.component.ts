@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Movie } from 'src/app/movie';
+import { WatchListService} from 'src/app/services/watchlist.service'
 
 @Component({
   selector: 'app-movie-details',
@@ -10,7 +11,7 @@ export class MovieDetailsComponent implements OnInit {
   @Input() movie: Movie;
   url_movie: string;
   url_img: string;
-  constructor() { }
+  constructor(private watchlistService: WatchListService) { }
 
   ngOnInit() {
     this.url_movie = 'https://www.themoviedb.org/movie/' + this.movie.id;
@@ -18,7 +19,7 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   addToWatchlist(movie: Movie) {
-    // ...
+    this.watchlistService.addMovie(movie);
   }
 
 }

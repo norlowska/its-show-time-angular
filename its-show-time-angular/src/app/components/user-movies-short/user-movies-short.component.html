@@ -1,2 +1,17 @@
-<div class="row">
+<div class="movies-library">
+  <h1>YOUR MOVIES</h1>
+  <!-- <div *ngIf="(movieslist$ | async)?.length == 0">Your watchlist is empty</div>
+  <div *ngIf="(movieslist$ | async)?.length > 0"> -->
+  <div *ngIf="movieslist.length == 0">Your watchlist is empty</div>
+  <div *ngIf="movieslist.length > 0">
+    <div class="your-movie" *ngFor="let movie of movieslist | slice : 0 : 5">
+      <a href={{url_movie}}{{movie.id}}>
+        <span *ngIf="movie.poster_path"><img src={{url_img}}{{movie.poster_path}} alt="poster" /></span>
+        <span *ngIf="!movie.poster_path"><img src="https://via.placeholder.com/92x138.jpg" alt="no-poster" /></span>
+      </a>
+      <h2>{{movie.original_title}}</h2>
+      <h3>{{movie.release_date}}</h3>
+      <button class="deleteButton" (click)="removeFromWatchlist(movie)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+    </div>
   </div>
+</div>
