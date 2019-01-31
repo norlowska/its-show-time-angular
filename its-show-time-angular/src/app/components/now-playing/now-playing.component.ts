@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MoviesService } from 'src/app/movies.service';
+import { MoviesService } from 'src/app/services/movies.service';
 import { Movie } from 'src/app/movie';
 import { SortingOrder } from 'src/app/sorting-order';
 @Component({

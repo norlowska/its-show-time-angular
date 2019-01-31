@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Movie } from './movie';
+import { Movie } from '../movie';
+import { SearchResults } from '../search-results';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,8 @@ export class MoviesService {
 
   constructor(private http: HttpClient) { }
 
-  getSearchResults(title): Observable<Movie[]> {
-    return this.http.get<Movie[]>(`${this.url}/search/movie${this.key}&query=${title}`);
+  getSearchResults(title: string) {
+    return this.http.get<SearchResults>(`${this.url}/search/movie${this.key}&query=${title}`);
   }
   getMovie(id: string): Observable<Movie> {
     return this.http.get<Movie>(`${this.url}/movie/${id}${this.key}`);

@@ -1,11 +1,14 @@
 <div class="row header">
-  <div class="col-md-8 col-lg-9">
+  <div class="col-md-2">
     <h1><a href='/'>It's SHOW time</a></h1>
   </div>
+  <div class="col-md-6 col-lg-7 nav-item">
+    <a href='/user-movies'>Your movies</a>
+  </div>
   <div class="col-md-4 col-lg-3">
-      <form class="row">
+      <form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="row">
         <div class="form-group col-md-9">
-          <input type="text" class="form-control" id="search" placeholder="Search...">        
+          <input formControlName="query" type="text" class="form-control" placeholder="Search...">        
         </div>
         <div class="col-md-3"><button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button></div>
       </form>

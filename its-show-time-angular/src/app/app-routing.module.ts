@@ -6,7 +6,7 @@ import { UserMoviesComponent } from './components/user-movies/user-movies.compon
 
 const routes: Routes = [
   { path: '', redirectTo: '/now-playing', pathMatch: 'full' },
-  { path: 'search=:query', component: SearchResultsComponent},
+  { path: 'search', component: SearchResultsComponent},
   { path: 'user-movies', component: UserMoviesComponent},
   { path: 'now-playing', component: NowPlayingComponent }
 ];

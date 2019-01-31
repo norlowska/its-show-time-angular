@@ -16,3 +16,7 @@ div.form-group  {
 div.col-md-2 {
     padding-left:0px;
 }
+
+.nav-item {
+    padding-top: 18px;
+}

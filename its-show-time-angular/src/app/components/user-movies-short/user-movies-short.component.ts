@@ -25,6 +25,7 @@ export class UserMoviesShortComponent implements OnInit {
 
   removeFromWatchlist(movie: Movie) {
     this.watchlistService.removeMovie(movie);
+    this.movieslist = this.watchlistService.getWatchlist();
   }
 
 }
